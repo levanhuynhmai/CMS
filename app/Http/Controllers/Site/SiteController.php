@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Jenssegers\Agent\Agent;
+use App\Helpers\simple_html_dom;
 
 
 /**
@@ -43,8 +44,9 @@ class SiteController extends Controller
         $this->data['manifest'] = $manifest;
 
        // load menu nav
-        $this->data['menuTop'] = Nav::menu('menu-top', 0);
-
+    
+       $this->data['menuTop'] = Nav::menu('menu_top', 0);
+       
         $this->page_number = config('constant.PAGE_NUMBER');
     }
 
